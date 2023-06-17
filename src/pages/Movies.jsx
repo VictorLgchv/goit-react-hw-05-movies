@@ -1,5 +1,6 @@
 // import { Link } from 'react-router-dom';
 
+import Loader from 'components/Loader/Loader';
 import { MoviesList } from 'components/MoviesList';
 import { SearchForm } from 'components/SearchForm';
 import { useState, useEffect } from 'react';
@@ -48,7 +49,7 @@ export const Movies = () => {
     <>
       <SearchForm onSubmit={handleSubmit} />
 
-      {loading && <div>Loading...</div>}
+      {loading && <Loader/>}
 
       {query && <MoviesList movies={movies} />}
 
