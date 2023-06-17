@@ -14,24 +14,25 @@ export const Movies = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchData = async () => {
-    setLoading(true);
-
-    const response = await fetchMovies(query);
-    try {
-      const data = await response.json();
-      setMovies(data.results);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  
   useEffect(() => {
     if (!query) {
       return;
     }
+    const fetchData = async () => {
+      setLoading(true);
+  
+      const response = await fetchMovies(query);
+      try {
+        const data = await response.json();
+        setMovies(data.results);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
     fetchData();
   }, [query]);
 
@@ -50,6 +51,12 @@ export const Movies = () => {
       {loading && <div>Loading...</div>}
 
       {query && <MoviesList movies={movies} />}
+
+      {query && movies.length === 0 && !loading && (
+        <h3>We have 0 films titled "{query}"</h3>
+      )}
+
+      {error && <h3>Oops, something went wrong: {error.message}</h3>}
     </>
   );
 };
