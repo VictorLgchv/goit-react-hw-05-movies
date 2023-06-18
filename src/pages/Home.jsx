@@ -3,7 +3,7 @@ import { MoviesList } from 'components/MoviesList';
 import { useEffect, useState } from 'react';
 import { fetchTrending } from 'services/fetchData';
 
-export const Home = () => {
+const Home = () => {
   const [trending, setTrending] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -33,3 +33,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;

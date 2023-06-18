@@ -4,7 +4,7 @@ import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { fetchMovieDetails } from 'services/fetchData';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
 
   const [movieData, setMovieData] = useState({});
@@ -91,3 +91,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;

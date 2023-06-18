@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import Loader from './Loader/Loader';
 
-export const Layout = () => {
+const Layout = () => {
   return (
     <>
       <header>
@@ -21,3 +21,5 @@ export const Layout = () => {
     </>
   );
 };
+
+export default Layout;

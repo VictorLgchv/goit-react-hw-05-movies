@@ -4,7 +4,7 @@ import { fetchCast } from 'services/fetchData';
 import Loader from './Loader/Loader';
 import { defaultImg } from './defaultImg';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -60,3 +60,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;
