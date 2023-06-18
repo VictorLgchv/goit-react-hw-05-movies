@@ -10,7 +10,7 @@ const location = useLocation()
       {movies.map(movie => {
         return (
           <li key={movie.id}>
-            <Link to={`/movies/${movie}`} state={{from: location}}>{movie.title}</Link>
+            <Link to={`movies/${movie.id}`} state={{from: location}}>{movie.title}</Link>
           </li>
         );
       })}
