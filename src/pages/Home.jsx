@@ -1,4 +1,3 @@
-
 import Loader from 'components/Loader/Loader';
 import { MoviesList } from 'components/MoviesList';
 import { useEffect, useState } from 'react';
@@ -28,7 +27,7 @@ export const Home = () => {
   return (
     <>
       <h1>Trending today</h1>
-      {loading ? <Loader/> : <MoviesList movies={trending}/>}
+      {loading ? <Loader /> : <MoviesList movies={trending} />}
 
       {error && <h3>Oops, something went wrong: {error.message}</h3>}
     </>

@@ -9,7 +9,7 @@ export const fetchMovies = query => {
   return fetch(`${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}`);
 };
 
-export const FetchMovieDetails = movieId => {
+export const fetchMovieDetails = movieId => {
   return fetch(`${BASE_URL}movie/${movieId}?api_key=${API_KEY}`);
 };
 
