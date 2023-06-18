@@ -1,5 +1,5 @@
 import Loader from 'components/Loader/Loader';
-import { MoviesList } from 'components/MoviesList';
+import MoviesList from 'components/MoviesList';
 import { useEffect, useState } from 'react';
 import { fetchTrending } from 'services/fetchData';
 

@@ -1,14 +1,14 @@
 // import { Link } from 'react-router-dom';
 
 import Loader from 'components/Loader/Loader';
-import { MoviesList } from 'components/MoviesList';
+import MoviesList from 'components/MoviesList';
 import { SearchForm } from 'components/SearchForm';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchMovies } from 'services/fetchData';
 
 const Movies = () => {
-  const [searchParams, setsearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query');
 
   const [movies, setMovies] = useState([]);
@@ -41,7 +41,7 @@ const Movies = () => {
     evt.preventDefault();
     const input = evt.target.elements.query;
     const nextParams = input.value.trim() !== '' ? { query: input.value } : {};
-    setsearchParams(nextParams);
+    setSearchParams(nextParams);
     input.value = '';
   };
 

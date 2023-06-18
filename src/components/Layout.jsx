@@ -4,21 +4,25 @@ import Loader from './Loader/Loader';
 
 const Layout = () => {
   return (
-    <>
+    <div>
       <header>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/movies">Movies</NavLink>
-          </li>
-        </ul>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/movies">Movies</NavLink>
+            </li>
+          </ul>
+        </nav>
       </header>
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense>
-    </>
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </main>
+    </div>
   );
 };
 

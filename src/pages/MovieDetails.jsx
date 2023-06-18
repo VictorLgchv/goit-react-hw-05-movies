@@ -12,17 +12,17 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
 
   const location = useLocation();
-  const backLinkLocationRef = useRef(location.state?.from ?? '/movies');
+  const backLinkLocationRef = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
 
     const fetchData = async () => {
+
       setLoading(true);
+
       const response = await fetchMovieDetails(movieId);
       try {
-        console.log(response)
         const data = await response.json();
-        console.log(data)
         setMovieData(data);
       } catch (error) {
         setError(error);
@@ -84,10 +84,9 @@ const MovieDetails = () => {
       </ul>
       <hr />
 
-      <Suspense fallback={<Loader/>}>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
       </Suspense>
-      
     </>
   );
 };
